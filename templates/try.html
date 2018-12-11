@@ -1,0 +1,24 @@
+<!doctype html>
+    <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<div></div>
+    	
+    	<link rel="stylesheet" type="text/css" href="try.css">
+      <link rel="stylesheet" href="{{ url_for('static', filename='try.css') }}">
+    	<script type="text/javascript" src="script.js"></script>
+
+
+
+
+    	<title>Upload new File</title>
+    </head>
+     <form method="post" enctype=multipart/form-data>
+      <input type="email" name="email">
+      <input type="password" name="password">
+      <input type="file" name="file">
+      <p>Drag your file here or click in this area.</p>
+      <button value="upload" type="submit">Upload</button>
+   
+      
+</form>
