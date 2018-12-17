@@ -14,8 +14,8 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 
-UPLOAD_FOLDER = r'C:\Users\Administrator\Desktop\uploads'
-ALLOWED_EXTENSIONS = {'sav','csv','jpg'}
+UPLOAD_FOLDER = r'/tmp'
+ALLOWED_EXTENSIONS = {'sav','csv','jpg','png'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
@@ -54,12 +54,12 @@ def upload_file():
             dt = pd.DataFrame(d_table)
 
             html_table = dt.to_html()
-
-            return html_table
+            if password == 'shaidrai' and email == 'shaidrai@gmail.com':
+                return html_table
+            else:
+                return "password and email are incorrect"
         else:
-            return('File is not allowed')
-
-
+            return ('File is not allowed')
 
 
 
@@ -69,4 +69,3 @@ def upload_file():
 if __name__ == "__main__":
     app.run(port=4555, debug=True)
 
-if password == 'shaidrai' and email == 'shaidrai@gmail.com:'
